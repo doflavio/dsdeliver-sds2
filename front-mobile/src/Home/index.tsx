@@ -5,9 +5,12 @@ import { RectButton } from 'react-native-gesture-handler';
 
 function Home() {
 
+    /*
     const handleOnPress = () => {
 
     }
+    */
+
     return (
         <>
             <View style={styles.container}>
@@ -15,12 +18,12 @@ function Home() {
                 <Text style={styles.title}> Acompanhe os pedidos e {'\n'} entregue no prazo!</Text>
                 <Text style={styles.subTitle}> Receba todos os pedidos do seu {'\n'} restaurante na palma de sua mão</Text>
             </View>
-            <view style={styles.footer}>
-                <RectButton style={styles.button} on>
+            <View style={styles.footer}>
+                <RectButton style={styles.button} >
                     <Text style={styles.buttonText}>VER PEDIDOS</Text>
 
                 </RectButton>
-            </view>
+            </View>
         </>
     );
 }
@@ -65,4 +68,5 @@ const styles = StyleSheet.create({
         letterSpacing: -0.24
     }
 });
+
 export default Home;
