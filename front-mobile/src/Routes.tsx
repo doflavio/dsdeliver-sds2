@@ -18,7 +18,7 @@ function Routes() {
                     }
                 }}
             >
-                <Stack.Screen name="none" component={Home}></Stack.Screen>
+                <Stack.Screen name="Home" component={Home}></Stack.Screen>
                 <Stack.Screen name="Orders" component={Orders}></Stack.Screen>
             </Stack.Navigator>
         </NavigationContainer >
