@@ -1,8 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableWithoutFeedback } from 'react-native';
-import { useFonts, OpenSans_400Regular, OpenSans_700Bold } from '@expo-google-fonts/open-sans';
-import AppLoading from 'expo-app-loading'
+import { StyleSheet, Text, View, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 export default function Header() {
 
@@ -13,7 +12,7 @@ export default function Header() {
     }
 
     return (
-        <TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={handleOnPress}>
             <View style={styles.container}>
                 <Image source={require('../assets/logo.png')} />
 

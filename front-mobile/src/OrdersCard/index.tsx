@@ -3,21 +3,29 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import { useFonts, OpenSans_400Regular, OpenSans_700Bold } from '@expo-google-fonts/open-sans';
 import { RectButton } from 'react-native-gesture-handler';
 import Header from '../Header';
+import { Order } from '../types';
 
-function OrdersCard() {
+type Props = {
+    order: Order;
+}
+
+function OrdersCard({ order }: Props) {
 
     return (
 
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.orderName}> Pedido 1</Text>
-                <Text style={styles.orderPrice}> R$ 50,00</Text>
+                <Text style={styles.orderName}> Pedido {order.id}</Text>
+                <Text style={styles.orderPrice}> R$ {order.total}</Text>
             </View >
-            <Text style={styles.text}>Há 3 minutos</Text>
+            <Text style={styles.text}>{order.moment}</Text>
+
             <View style={styles.productsList}>
-                <Text style={styles.text}> Pizza Calabresa</Text>
-                <Text style={styles.text}> Pizza Quatro Queijos</Text>
-                <Text style={styles.text}> Pizza Marguerita</Text>
+                {order.products.map(product => (
+                    <Text key={product.id} style={styles.text}>
+                        {product.name}
+                    </Text>
+                ))}
             </View>
         </View>
 
